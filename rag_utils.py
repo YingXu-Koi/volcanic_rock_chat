@@ -28,7 +28,7 @@ class OptimizedRAG:
             self._vectordb = Chroma(
                 embedding_function=embeddings,
                 persist_directory=self.persist_directory,
-                collection_name="trocaz_pigeon_knowledge"  # 与向量化脚本保持一致
+                collection_name="volcanic_rock_knowledge"  # 与向量化脚本保持一致
             )
             print(f"[RAG] ✅ 向量数据库已加载")
         return self._vectordb

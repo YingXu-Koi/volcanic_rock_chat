@@ -30,7 +30,7 @@ Zino's Chat 是一个创新的 AI 互动教育系统，让用户能够与濒危�
 
 ### 🗣️ 智能对话系统
 - **角色扮演**: Zino's Petrel 化身，真实互动体验
-- **语音合成**: Qwen TTS 提供自然流畅的语音（支持 Cherry/Ethan 音色）
+- **语音合成**: Qwen TTS 提供自然流畅的语音（支持 Marcus/Ethan 音色）
 - **双语切换**: 英语/葡萄牙语无缝切换
 
 ### 📚 RAG 知识增强
@@ -284,7 +284,7 @@ python vectorize_knowledge_base.py
 **解决：** 在 `.env` 中检查配置
 ```env
 QWEN_TTS_MODEL=qwen3-tts-flash
-QWEN_TTS_VOICE=Cherry
+QWEN_TTS_VOICE=Marcus
 ```
 </details>
 

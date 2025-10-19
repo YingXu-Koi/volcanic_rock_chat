@@ -36,7 +36,7 @@ temp_*.mp3
 
 # ChromaDB（可选，如果数据库太大）
 # db5/
-# db8_qwen/
+# db7_qwen/
 
 # 临时文件
 temp_*

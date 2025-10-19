@@ -131,7 +131,7 @@ TAVILY_API_KEY = "tvly-你的密钥"
 QWEN_MODEL_NAME = "qwen-turbo"
 QWEN_EMBEDDING_MODEL = "text-embedding-v3"
 QWEN_TTS_MODEL = "qwen3-tts-flash"
-QWEN_TTS_VOICE = "Cherry"
+QWEN_TTS_VOICE = "Marcus"
 ```
 
 ### 步骤 4: 部署并测试

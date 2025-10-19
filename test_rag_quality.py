@@ -265,7 +265,7 @@ def test_performance():
     # 首次查询（冷启动）
     print(f"\n🔵 首次查询（冷启动）...")
     start_time = time.time()
-    rag1 = get_rag_instance("db8_qwen", api_key)
+    rag1 = get_rag_instance("db7_qwen", api_key)
     docs1 = rag1.retrieve(test_query)
     cold_time = time.time() - start_time
     print(f"   ⏱️  耗时: {cold_time:.3f} 秒")

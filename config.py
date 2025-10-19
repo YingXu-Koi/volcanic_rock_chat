@@ -30,7 +30,7 @@ class Config:
     # ==================== Qwen TTS 配置 ====================
     TTS_PROVIDER = os.getenv("TTS_PROVIDER", "qwen")
     QWEN_TTS_MODEL = os.getenv("QWEN_TTS_MODEL", "qwen3-tts-flash")
-    QWEN_TTS_VOICE = os.getenv("QWEN_TTS_VOICE", "Cherry")
+    QWEN_TTS_VOICE = os.getenv("QWEN_TTS_VOICE", "Marcus")
     QWEN_TTS_LANGUAGE = os.getenv("QWEN_TTS_LANGUAGE", "Chinese")
     QWEN_TTS_STREAM = os.getenv("QWEN_TTS_STREAM", "true").lower() == "true"
     USE_GTTS_FALLBACK = os.getenv("USE_GTTS_FALLBACK", "true").lower() == "true"
@@ -87,7 +87,7 @@ class Config:
     # ==================== 备用配置 ====================
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     ENABLE_OPENAI_FALLBACK = os.getenv("ENABLE_OPENAI_FALLBACK", "false").lower() == "true"
-    FALLBACK_VECTOR_DB_PATH = os.getenv("FALLBACK_VECTOR_DB_PATH", "db8")
+    FALLBACK_VECTOR_DB_PATH = os.getenv("FALLBACK_VECTOR_DB_PATH", "db7")
     
     # ==================== 日志配置 ====================
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")

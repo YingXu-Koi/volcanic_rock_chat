@@ -27,7 +27,7 @@ load_dotenv()
 
 # 配置
 PDF_FOLDER = "Mediterranean Monk Seal"
-VECTOR_DB_PATH = "db8_qwen"
+VECTOR_DB_PATH = "db7_qwen"
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200  # 20% 重叠，保持上下文连续性
 # 从环境变量读取 Embedding 模型（与 rag_utils.py 保持一致）

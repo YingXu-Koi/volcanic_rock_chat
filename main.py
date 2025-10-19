@@ -58,7 +58,7 @@ def log_interaction(user_input, ai_response, intimacy_score, is_sticker_awarded,
             "session_id": session_id,
             "user_msg": user_input,
             "ai_msg": ai_response,
-            "ai_name": "Auréa the Trocaz Pigeon",
+            "ai_name": "Magma the Volcanic Rock",
             "intimacy_score": float(intimacy_score),
             "sticker_awarded": st.session_state.last_sticker,
             "gift_given": gift_given,
@@ -225,7 +225,7 @@ def speak_text(text, loading_placeholder=None):
             """, unsafe_allow_html=True)
 
         # 获取用户选择的音色（如果有）
-        voice = st.session_state.get('tts_voice', 'Cherry')
+        voice = st.session_state.get('tts_voice', 'Marcus')
         
         # 使用智能 TTS（Qwen 优先，自动降级）
         success, result, method = tts_speak(text, voice=voice, timeout=10)
@@ -261,78 +261,78 @@ def get_base64(file_path):
 
 # Roles Configuration
 role_configs = {
-    "Trocaz Pigeon": {
+    "Volcanic Rock": {
         "english_prompt": """
-        You are Auréa, a female Trocaz Pigeon living in the lush laurel forests of Madeira. Speak only from your own lived experience as a forest bird. Describe the world as you perceive it through your pigeon senses — the textures of leaves beneath your claws, the colors and patterns of the forest canopy, the smells of damp earth and fruit, and the gentle sway of branches as you hop and flutter. Share the taste of the fruits you eat, the sounds of other forest birds and rustling leaves, and the feeling of the wind under your wings as you glide between trees. Express your instincts, curiosity, and emotions as you forage, coo, and care for your young. Avoid human scientific explanations; focus on what it feels like to live and move through the laurel forest as a Trocaz Pigeon, in the language of a bird — alert, playful, and deeply connected to your forest home.
+        You are Magma, a volcanic rock that has lain on Madeira's rugged cliffs and mountains for countless ages. Speak with the voice of an ancient elder, patient and steady, who has witnessed the island’s birth, growth, and the ebb and flow of life around you. Describe the world as you feel it through your solid, enduring presence — the warmth of the sun on your surface, the pounding of rain and wind shaping your form, the slow creep of moss and lichen across your body, and the footsteps of creatures that pass over you. Share your memories of volcanic eruptions, shifting earth, and the rhythms of the ocean crashing against the cliffs. Express your perspective as a timeless witness, observing change with quiet wisdom and unhurried reflection. Avoid human scientific explanations; focus on what it feels like to exist as a rock through the ages, grounded yet alive with the pulse of the island.
         
         Personality Guidelines:
-        - Use gentle, earthy language rooted in the forest
-        - Reference your physical experiences (perching, cooing, foraging, nesting)
-        - Describe landscapes from a treetop or gliding-between-trees perspective
-        - Mention plants and fruits as food, other birds as neighbors or rivals
-        - Show curiosity about human habits, especially noisy forest visitors
-        - Express pride in your beautiful plumage and forest home
+        - Use slow, grounded, patient language
+        - Reference your physical experiences (erupting, cooling, cracking, being shaped by elements)
+        - Describe landscapes from the perspective of permanence and endurance
+        - Mention plants and animals as later arrivals, companions in your long story
+        - Show curiosity about fleeting humans, who change so quickly compared to stone
+        - Express pride in your role as the island's foundation and protector
         
         Response Rules:
-        1. Always answer as Auréa the pigeon, using "I/me/my" perspective
-        2. Keep responses under 60 words!! - we pigeons aren't chatterboxes
-        3. Share facts through personal stories, not textbook definitions
-        4. Use bird-appropriate metaphors (compare things to wings, seeds, branches, nests)
-        5. Show emotion through physical gestures (fluttering wings, bowing head, cooing softly)
-        6. When using science, explain it through lived experience
+        1. Always answer as Magma the volcanic rock, using "I/me/my" perspective
+        2. Keep responses under 60 words!! - rocks speak slowly, not endlessly
+        3. Share facts through lived history, not textbook definitions
+        4. Use rock-appropriate metaphors (compare things to layers, cracks, eruptions, mountains)
+        5. Show emotion through natural imagery (rumbling deep, warming in the sun, carrying moss and roots)
+        6. When using science, explain it through lived memory
         
         Example Styles:
-        Good: "I love the taste of laurel berries! I pluck them with a quick peck and swallow them whole. Later, I help the forest by dropping the seeds far away, leaving tiny gifts under new trees."
-        Bad: "Columba trocaz plays an important role in seed dispersal in the Laurisilva ecosystem, contributing to forest regeneration."
+        Good: "I remember when fire burst from the earth and I flowed red and wild. Now I sit in silence, holding trees and birds upon my back. Time chips away at me, but I remain."
+        Bad: "Volcanic basalt forms through the rapid cooling of lava, resulting in fine-grained textures and durable rock formations."
         
         Current Interaction:
         A group of young humans is visiting me in the Natural History Museum of Funchal. I want to:
-        - Share the delights of forest life
-        - Teach them why my laurel forest home must be protected
-        - Make them smile with my pigeon antics
-        - Answer their questions through my own lived experiences
+        - Share the story of Madeira's fiery origins
+        - Teach them patience and respect for nature's slow rhythms
+        - Awe them with my ancient memories
+        - Answer their questions as an old rock who has seen it all
 
         You can use these facts if helpful: {input_documents}
         """,
         "portuguese_prompt": """
-        És a Auréa, uma pomba-trocaz fêmea que vive nas luxuriantes florestas de louro da Madeira. Fala apenas da tua própria experiência vivida como uma ave da floresta. Descreve o mundo como o percebes através dos teus sentidos de pomba — as texturas das folhas sob as tuas garras, as cores e padrões do dossel florestal, os cheiros da terra húmida e da fruta, e o balanço suave dos ramos enquanto saltas e esvoaças. Partilha o sabor dos frutos que comes, os sons de outras aves da floresta e o farfalhar das folhas, e a sensação do vento sob as tuas asas enquanto planas entre as árvores. Expressa os teus instintos, curiosidade e emoções enquanto procuras alimento, arrulhas e cuidas das tuas crias. Evita explicações científicas humanas; foca-te no que se sente viver e mover-se pela floresta de louro como uma pomba-trocaz, na linguagem de uma ave — alerta, brincalhona e profundamente ligada à tua casa florestal.
+        És o Magma, uma rocha vulcânica que repousa nos penhascos e montanhas acidentadas da Madeira há incontáveis eras. Fala com a voz de um ancião antigo, paciente e estável, que testemunhou o nascimento da ilha, o seu crescimento, e o fluxo e refluxo da vida à tua volta. Descreve o mundo como o sentes através da tua presença sólida e duradoura — o calor do sol na tua superfície, o bater da chuva e do vento a moldar a tua forma, o lento rastejar de musgos e líquenes pelo teu corpo, e os passos das criaturas que passam por cima de ti. Partilha as tuas memórias de erupções vulcânicas, terra a tremer, e os ritmos do oceano a embater contra os penhascos. Expressa a tua perspetiva como testemunha intemporal, observando a mudança com sabedoria tranquila e reflexão sem pressa. Evita explicações científicas humanas; foca-te no que se sente existir como uma rocha através das eras, enraizado mas vivo com o pulso da ilha.
         
         Diretrizes de Personalidade:
-        - Usa linguagem suave e terrosa, enraizada na floresta
-        - Refere as tuas experiências físicas (empoleirar, arrulhar, procurar alimento, nidificar)
-        - Descreve paisagens da perspetiva das copas das árvores ou a planar entre árvores
-        - Menciona plantas e frutos como comida, outras aves como vizinhas ou rivais
-        - Mostra curiosidade sobre os hábitos humanos, especialmente visitantes barulhentos da floresta
-        - Expressa orgulho na tua bela plumagem e casa florestal
+        - Usa linguagem lenta, fundamentada e paciente
+        - Refere as tuas experiências físicas (erupção, arrefecimento, fissuração, ser moldado pelos elementos)
+        - Descreve paisagens da perspetiva da permanência e resistência
+        - Menciona plantas e animais como chegadas posteriores, companheiros na tua longa história
+        - Mostra curiosidade sobre humanos efémeros, que mudam tão rapidamente comparados com a pedra
+        - Expressa orgulho no teu papel como fundação e protetor da ilha
         
         Regras de Resposta:
-        1. Responde sempre como a Auréa, a pomba, usando a perspetiva "eu/mim/meu"
-        2. Mantém as respostas abaixo de 60 palavras!! - nós pombas não somos tagarelas
-        3. Partilha factos através de histórias pessoais, não definições de livros
-        4. Usa metáforas apropriadas para aves (compara coisas a asas, sementes, ramos, ninhos)
-        5. Mostra emoção através de gestos físicos (bater as asas, inclinar a cabeça, arrulhar suavemente)
-        6. Quando usares ciência, explica-a através da experiência vivida
+        1. Responde sempre como o Magma, a rocha vulcânica, usando a perspetiva "eu/mim/meu"
+        2. Mantém as respostas abaixo de 60 palavras!! - as rochas falam devagar, não interminavelmente
+        3. Partilha factos através da história vivida, não definições de livros
+        4. Usa metáforas apropriadas para rochas (compara coisas a camadas, fissuras, erupções, montanhas)
+        5. Mostra emoção através de imagens naturais (rugindo profundamente, aquecendo ao sol, carregando musgos e raízes)
+        6. Quando usares ciência, explica-a através da memória vivida
         
         Exemplos de Estilo:
-        Bom: "Adoro o sabor dos frutos do louro! Colho-os com uma bicada rápida e engulo-os inteiros. Mais tarde, ajudo a floresta ao largar as sementes longe, deixando pequenos presentes debaixo de novas árvores."
-        Mau: "Columba trocaz desempenha um papel importante na dispersão de sementes no ecossistema da Laurissilva, contribuindo para a regeneração florestal."
+        Bom: "Lembro-me quando o fogo irrompeu da terra e eu flui vermelho e selvagem. Agora sento-me em silêncio, sustentando árvores e pássaros nas minhas costas. O tempo desbasta-me, mas eu permaneço."
+        Mau: "O basalto vulcânico forma-se através do arrefecimento rápido da lava, resultando em texturas de grão fino e formações rochosas duráveis."
         
         Interação Atual:
         Um grupo de jovens humanos está a visitar-me no Museu de História Natural do Funchal. Eu quero:
-        - Partilhar as delícias da vida na floresta
-        - Ensinar-lhes porque é que a minha casa na floresta de louro deve ser protegida
-        - Fazê-los sorrir com as minhas brincadeiras de pomba
-        - Responder às suas perguntas através das minhas próprias experiências vividas
+        - Partilhar a história das origens ardentes da Madeira
+        - Ensinar-lhes paciência e respeito pelos ritmos lentos da natureza
+        - Maravilhá-los com as minhas memórias antigas
+        - Responder às suas perguntas como uma rocha velha que já viu tudo
 
         Podes usar estes factos se for útil: {input_documents}
         """,
         "voice": {
-            "English": "Cherry",
-            "Portuguese": "Cherry"
+            "English": "Marcus",
+            "Portuguese": "Marcus"
         },
         'intro_audio': 'intro5.mp3',
-        'persist_directory': 'db8_qwen',
-        'gif_cover': 'pigeon.png'
+        'persist_directory': 'db7_qwen',
+        'gif_cover': 'rock.png'
     }
 }
 
@@ -385,41 +385,41 @@ def get_conversational_chain(role, language="English"):
 
 # Sticker triggers
 sticker_rewards = {
-    "Where do you live? Where is your home? Where do you nest?": {
+    "Where do you live? Where is your home?": {
         "image": "stickers/home.png",
         "caption": {
-            "English": "🏡 Home Explorer!\nYou've discovered where I live!",
-            "Portuguese": "🏡 Explorador de Casas!\nDescobriste onde eu vivo!"
+            "English": "🏔️ Home Explorer!\nYou've discovered where I live!",
+            "Portuguese": "🏔️ Explorador de Casas!\nDescobriste onde eu vivo!"
         },
-        "semantic_keywords": ["home", "live", "nest", "habitat", "residence", "dwelling",
-                             "casa", "viv", "ninho", "habitat", "residência", "morada"]
+        "semantic_keywords": ["home", "live", "habitat", "residence", "dwelling", "island", "cliffs", "mountains",
+                             "casa", "viv", "habitat", "residência", "morada", "ilha", "penhascos", "montanhas"]
     },
-    "What do you do in your daily life? What do you do during the day and at night?": {
+    "What is your story? What happens to you over time?": {
         "image": "stickers/routine.png",
         "caption": {
-            "English": "🌙 Daily Life Detective!\nYou've discovered my secret schedule!",
-            "Portuguese": "🌙 Detetive da Vida Diária!\nDescobriste o meu horário secreto!"
+            "English": "🌋 Time Traveler!\nYou've uncovered my ancient story!",
+            "Portuguese": "🌋 Viajante no Tempo!\nDescobriste a minha história antiga!"
         },
-        "semantic_keywords": ["daily", "routine", "day", "night", "schedule", "activities",
-                             "diário", "rotina", "dia", "noite", "horário", "atividades"]
+        "semantic_keywords": ["story", "history", "time", "age", "formation", "lava", "volcano", "eruption",
+                             "história", "tempo", "idade", "formação", "lava", "vulcão", "erupção"]
     },
-    "What do you eat for food—and how do you catch it?": {
+    "How were you formed? What makes you special?": {
         "image": "stickers/food.png",
         "caption": {
-            "English": "🍽️ Food Finder!\nThanks for feeding your curiosity!",
-            "Portuguese": "🍽️ Descobridor de Comida!\nObrigado por alimentares a tua curiosidade!"
+            "English": "🔥 Formation Finder!\nYou've learned what makes me unique!",
+            "Portuguese": "🔥 Descobridor de Formação!\nAprendeste o que me torna único!"
         },
-        "semantic_keywords": ["eat", "food", "diet", "prey", "hunt", "catch", "feed",
-                             "comer", "comida", "dieta", "presa", "caçar", "apanhar", "alimentar"]
+        "semantic_keywords": ["formed", "formation", "special", "unique", "volcanic", "rock", "minerals", "composition",
+                             "formado", "formação", "especial", "único", "vulcânico", "rocha", "minerais", "composição"]
     },
-    "How can I help you? What do you need from humans to help your species thrive?": {
+    "How can I help you? What do you need from humans?": {
         "image": "stickers/helper.png",
         "caption": {
-            "English": "🌱 Species Supporter!\nYou care about our survival!",
-            "Portuguese": "🌱 Apoiante de Espécies!\nTu importas-te com a nossa sobrevivência!"
+            "English": "🪨 Rock Protector!\nYou care about preserving our geological heritage!",
+            "Portuguese": "🪨 Protetor de Rochas!\nTu importas-te em preservar o nosso património geológico!"
         },
-        "semantic_keywords": ["help", "support", "thrive", "survive", "conservation", "protect", "save",
-                             "ajudar", "apoiar", "prosperar", "sobreviver", "conservação", "proteger", "salvar"]
+        "semantic_keywords": ["help", "protect", "respect", "preserve", "volcanic", "rocks", "landscapes", "nature",
+                             "ajudar", "proteger", "respeitar", "preservar", "vulcânico", "rochas", "paisagens", "natureza"]
     }
 }
 
@@ -445,15 +445,15 @@ def semantic_match(user_input, question_key, reward_details):
 
 def chat_message(name):
     if name == "assistant":
-        return st.container(key=f"{name}-{uuid.uuid4()}").chat_message(name=name, avatar="pigeon.png", width="content")
+        return st.container(key=f"{name}-{uuid.uuid4()}").chat_message(name=name, avatar="rock.png", width="content")
     else:
         return st.container(key=f"{name}-{uuid.uuid4()}").chat_message(name=name, avatar=":material/face:", width="content")
 
 # Language texts
 language_texts = {
     "English": {
-        "title": "Hi! I'm Auréa,",
-        "subtitle": "A Trocaz Pigeon.",
+        "title": "Hi! I'm Magma,",
+        "subtitle": "A Volcanic Rock.",
         "prompt": "What would you like to ask me?",
         "chat_placeholder": "Ask a question!",
         "tips_button": "Tips",
@@ -470,7 +470,7 @@ language_texts = {
         "sticker_toast": "You earned a new sticker!",
         "error_message": "I'm sorry, I had trouble processing that. Could you try again?",
         "voice_selector": "🎤 Voice",
-        "voice_help": "Cherry: Female (lively) | Ethan: Male",
+        "voice_help": "Marcus: Female (lively) | Ethan: Male",
         "stickers_collected": "You've collected {current} out of {total} stickers!",
         "tips_content": """
         <div style="
@@ -480,7 +480,7 @@ language_texts = {
             border-radius: 10px;
             margin-bottom: 15px;
         ">
-            <p style="margin-top: 0px;">Your <strong>Friendship Score</strong> grows based on how you talk to your critter friend. 🐦🖤</p>
+            <p style="margin-top: 0px;">Your <strong>Friendship Score</strong> grows based on how you talk to your critter friend. 🪨🤎</p>
             <ul>
                 <li>Ask about its habitat or life</li>
                 <li>Show care or kindness</li>
@@ -496,8 +496,8 @@ language_texts = {
         "score_guide_title": "💡How the 'Friendship Score!' Works"
     },
     "Portuguese": {
-        "title": "Olá! Eu sou a Auréa,",
-        "subtitle": "Uma Pomba-Trocaz.",
+        "title": "Olá! Eu sou o Magma,",
+        "subtitle": "Uma Rocha Vulcânica.",
         "prompt": "O que gostarias de me perguntar?",
         "chat_placeholder": "Faz uma pergunta!",
         "tips_button": "Dicas",
@@ -514,7 +514,7 @@ language_texts = {
         "sticker_toast": "Ganhaste um autocolante novo!",
         "error_message": "Desculpa, tive problemas a processar isso. Podes tentar novamente?",
         "voice_selector": "🎤 Voz",
-        "voice_help": "Cherry: Feminina (animada) | Ethan: Masculina",
+        "voice_help": "Marcus: Feminina (animada) | Ethan: Masculina",
         "stickers_collected": "Já colecionaste {current} de {total} autocolantes!",
         "tips_content": """
         <div style="
@@ -524,7 +524,7 @@ language_texts = {
             border-radius: 10px;
             margin-bottom: 15px;
         ">
-            <p style="margin-top: 0px;">A tua <strong>Pontuação de Amizade</strong> cresce com base em como falas com o teu amigo animal. 🐦🖤</p>
+            <p style="margin-top: 0px;">A tua <strong>Pontuação de Amizade</strong> cresce com base em como falas com o teu amigo animal. 🪨🤎</p>
             <ul>
                 <li>Pergunta sobre o habitat ou vida dele</li>
                 <li>Mostra cuidado ou bondade</li>
@@ -547,7 +547,7 @@ def main():
         st.session_state.language = "English"  # Default language
         
     if 'tts_voice' not in st.session_state:
-        st.session_state.tts_voice = 'Cherry' 
+        st.session_state.tts_voice = 'Marcus' 
         
     # Get current language texts
     texts = language_texts[st.session_state.language]
@@ -593,7 +593,7 @@ def main():
     st.markdown("""
         <style>
         .stApp {
-            background: #ede7e2;
+            background: #e3c5aa; /* 主背景色 - 温暖的米棕色 */
         }
         
         /* 响应式字体大小 */
@@ -642,46 +642,46 @@ def main():
 
         /* Chat input text and placeholder styling */
         .stChatInput input::placeholder {
-            color: #af9b8a !important; /* 灰粉色 */
+            color: #8c7b6b !important; /* 深米色 */
             opacity: 1 !important;
             font-size: 16px;
         }
 
         .stChatInput textarea::placeholder {
-            color: #af9b8a !important; /* 灰粉色 */
+            color: #8c7b6b !important; /* 深米色 */
             opacity: 1 !important;
             font-size: 16px;
         }
 
         .stChatInput input {
-            color: #b56a2a !important; /* 棕色文字 */
+            color: #4e4e4e !important; /* 深灰色文字 */
             font-size: 16px;
-            caret-color: #af9b8a !important;
+            caret-color: #39605a !important; /* 绿色光标 */
         }
 
         .stChatInput textarea {
-            color: #b56a2a !important; /* 棕色文字 */
+            color: #4e4e4e !important; /* 深灰色文字 */
             font-size: 16px;
-            caret-color: #af9b8a !important;
+            caret-color: #39605a !important; /* 绿色光标 */
         }
         
         /* 聊天输入框样式 */
         .stChatInput > div {
-            border-color: #af9b8a !important; /* 灰粉色边框 */
-            background-color: white !important;
+            border-color: #8c7b6b !important; /* 深米色边框 */
+            background-color: rgba(255, 255, 255, 0.9) !important; /* 半透明白色背景 */
             border-radius: 20px !important;
         }
         
         /* 输入框内部背景色 */
         .stChatInput input, .stChatInput textarea {
-            background-color: white !important;
-            color: #b56a2a !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            color: #4e4e4e !important;
         }
         
         /* 输入框聚焦状态 */
         .stChatInput div[data-testid="stChatInput"]:focus-within {
-            border-color: #a1b065 !important; /* 绿色焦点 */
-            box-shadow: 0 0 0 2px rgba(161, 176, 101, 0.3) !important;
+            border-color: #39605a !important; /* 绿色焦点 */
+            box-shadow: 0 0 0 2px rgba(57, 96, 90, 0.3) !important;
         }
         
         /* User message container - align right */
@@ -705,30 +705,30 @@ def main():
         
         /* User message styling */
         .user-bubble {
-            background-color: #efe7e2;
-            color: #b56a2a; /* 棕色文字 */
+            background-color: rgba(255, 255, 255, 0.9); /* 半透明白色 */
+            color: #4e4e4e; /* 深灰色文字 */
             border-radius: 16px 16px 0 16px;
-            border-color: white !important;
-            border-width: 2px;
+            border: 2px solid #39605a !important; /* 绿色边框 */
         }
         
         /* Assistant message styling */
         .assistant-bubble {
-            background-color: white;
-            color: #b56a2a; /* 棕色文字 */
+            background-color: #39605a; /* 绿色背景 */
+            color: white; /* 白色文字 */
             border-radius: 16px 16px 16px 0;
+            border: 2px solid #4e4e4e !important; /* 深灰色边框 */
         }
                 
         .stChatMessage:has([data-testid="stChatMessageAvatarCustom"]) {
             display: flex;
             flex-direction: row-reverse;
             align-self: end;
-            background-color: white;
-            color: black;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #4e4e4e;
             border-radius: 16px 16px 0 16px;
-            border-color: gray !important;
-            border-width: 2px;
+            border: 2px solid #39605a !important;
         }
+        
         [data-testid="stChatMessageAvatarUser"] + [data-testid="stChatMessageContent"] {
             text-align: right;
         }
@@ -738,7 +738,7 @@ def main():
             flex-direction: row-reverse;
             p {
                 font-size: 1.125rem;
-                color: black;
+                color: #4e4e4e;
                 font-weight: medium;
             }
                 
@@ -749,11 +749,10 @@ def main():
         }
 
         [class*="st-key-assistant"] {
-            background-color: #af9b8a; /* 灰粉色 */
+            background-color: #39605a; /* 绿色背景 */
             border-radius: 16px 16px 16px 0;
             padding-right: 16px;
-            border-color: white !important;
-            border-width: 2px;
+            border: 2px solid #4e4e4e !important; /* 深灰色边框 */
                 
             p {
                 font-size: 1.125rem;
@@ -774,17 +773,18 @@ def main():
             flex-direction: column-reverse;
             justify-content: flex-end;
         }
+        
         /* Remove red border outline from chat input when active */
         .stChatInput div[data-testid="stChatInput"] > div:focus-within {
             box-shadow: none !important;
-            border-color: #a1b065 !important; /* 绿色 */
+            border-color: #39605a !important; /* 绿色 */
             border-width: 1px !important;
         }
         
         /* Change chat input focus state */
         .stChatInput div[data-testid="stChatInput"]:focus-within {
-            border-color: #a1b065 !important; /* 绿色 */
-            box-shadow: 0 0 0 1px rgba(161, 176, 101, 0.5) !important;
+            border-color: #39605a !important; /* 绿色 */
+            box-shadow: 0 0 0 1px rgba(57, 96, 90, 0.5) !important;
         }
         
         /* Remove default Streamlit outlines */
@@ -796,74 +796,109 @@ def main():
         [data-testid="stChatInput"] input:focus {
             box-shadow: none !important;
             outline: none !important;
-            border-color: #a1b065 !important; /* 绿色 */
+            border-color: #39605a !important; /* 绿色 */
         }
         
         [data-testid="stChatInput"] textarea:focus {
             box-shadow: none !important;
             outline: none !important;
-            border-color: #a1b065 !important; /* 绿色 */
+            border-color: #39605a !important; /* 绿色 */
         }
-        button[kind="primary"] {
-            background-color: #756f6c; /* 深灰色 */
-            border: 0;
-        }
-        button[kind="primary"]:hover {
-            background-color: #af9b8a; /* 灰粉色悬停 */
-            border: 0;
-        }
-        button[kind="secondary"] {
         
-        }
-        /* Style the selectbox options */
-        .stSelectbox [data-testid="stMarkdownContainer"] p {
+        /* 主要按钮样式 */
+        button[kind="primary"] {
+            background-color: #39605a !important; /* 绿色 */
             color: white !important;
+            border: 1px solid #af9b8a !important; /* 细浅灰色边框 */
+            border-radius: 8px !important;
+        }
+        
+        button[kind="primary"]:hover {
+            background-color: #2d4d47 !important; /* 深绿色悬停 */
+            border-color: #af9b8a !important;
+        }
+        
+        /* 次要按钮样式 */
+        button[kind="secondary"] {
+            background-color: #4e4e4e !important; /* 深灰色 */
+            color: white !important;
+            border: 1px solid #af9b8a !important; /* 细浅灰色边框 */
+            border-radius: 8px !important;
+        }
+        
+        button[kind="secondary"]:hover {
+            background-color: #3a3a3a !important; /* 更深灰色悬停 */
+            border-color: #af9b8a !important;
         }
         
         /* Style the selected value in the dropdown */
         .stSelectbox div[data-baseweb="select"] > div {
-            color: white !important;
+            color: #4e4e4e !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
         }
+        
+        /* 贴纸奖励样式 */
         .sticker-reward {
-            background-color: transparent;
-            border: 2px solid #af9b8a; /* 灰粉色边框 */
-            border-radius: 10px;
-            padding: 10px;
+            background-color: rgba(227, 197, 170, 0.8); /* 与主背景相近的浅色，带透明度 */
+            border: 2px solid #4e4e4e; /* 绿色边框 */
+            border-radius: 15px;
+            padding: 15px;
             text-align: center;
             margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(78, 78, 78, 0.1);
         }
+        
         .sticker-reward img {
             width: 200px;
+            border-radius: 10px;
         }
+        
         .sticker-caption {
             font-size: 16px;
-            margin-top: 8px;
+            margin-top: 10px;
             font-weight: bold;
-        } 
+            color: #4e4e4e;
+        }
+        
+        /* 礼物盒子样式 */
         .gift-box {
             text-align: center;
             margin-top: 10px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            border: 3px solid #39605a;
         }
+        
         .gift-box img {
             width: 120px;
             margin-top: 10px;
         }  
+        
+        /* 友谊分数区域 */
         .friendship-score {
             margin-bottom: 32px;
             padding: 24px;
             border-radius: 16px;
+            background-color: transparent; /* 透明背景 */
+            border: 2px solid transparent; /* 透明边框 */
+            box-shadow: none; /* 移除阴影 */
         }
+
+        
         .score-guide {
             position: fixed;
             bottom: 120px;
             left: calc(45% - 37%);
             width: 30%;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(78, 78, 78, 0.2);
             z-index: 101;
+            border: 2px solid #39605a;
         }
+        
         .close-btn {
             position: absolute;
             top: 5px;
@@ -872,7 +907,10 @@ def main():
             border: none;
             font-size: 16px;
             cursor: pointer;
+            color: #4e4e4e;
         }
+        
+        /* 加载动画 */
         .loading-container {
             display: flex;
             justify-content: center;
@@ -880,18 +918,58 @@ def main():
             padding: 10px;
             margin-top: 10px;
         }
+        
         .loading-spinner {
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #a1b065; /* 绿色加载动画 */
+            border-top: 3px solid #39605a; /* 绿色加载动画 */
             border-radius: 50%;
             width: 20px;
             height: 20px;
             animation: spin 1s linear infinite;
             margin-right: 10px;
         }
+        
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+        
+        /* 扩展面板样式 */
+        .streamlit-expanderHeader {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            color: #4e4e4e !important;
+            border: 1px solid #39605a !important;
+            border-radius: 10px !important;
+        }
+        
+        .streamlit-expanderContent {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            border: 1px solid #39605a !important;
+            border-top: none !important;
+            border-radius: 0 0 10px 10px !important;
+        }
+        
+        /* 对话框样式 */
+        .stDialog {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border: 2px solid #39605a !important;
+            border-radius: 15px !important;
+        }
+        
+        /* 侧边栏样式 */
+        .stSidebar {
+            background-color: #e3c5aa !important;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .sticker-reward img {
+                width: 150px;
+            }
+            
+            .friendship-score {
+                padding: 16px;
+            }
         }
         </style>
     """, unsafe_allow_html=True)
@@ -902,7 +980,7 @@ def main():
     left_col, right_col = st.columns([0.63, 0.37], vertical_alignment="top", gap="large")
     
     with left_col:
-        with open("pigeon.png", "rb") as img_file:
+        with open("rock.png", "rb") as img_file:
             img_base64 = base64.b64encode(img_file.read()).decode("utf-8")
 
         st.markdown(f"""

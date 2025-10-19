@@ -15,20 +15,19 @@ def get_friendly_filename(source_file):
     """
     filename_mapping = {
         # Your Excel mappings
-    'file-bd0016401e94ab.pdf': 'Reid_1887_Notes_on_the_Birds_of_Teneriffe.pdf',
-    'Madeira-2021.pdf': 'Flood_2021_Oriole_Birding_Tour_Report_Madeira_Endemics_and_Seabirds.pdf',
-    'condor0811.pdf': 'Oliveira_et_al_2002_Diet_of_the_Endemic_Madeira_Laurel_Pigeon_and_Fruit_Resource_Availability.pdf',
-    'madeira-2024-text.pdf': 'Koppenol_2024_Madeira_Tour_Report.pdf',
-    'cbirds.2009.0017.pdf': 'Somasundaram_Vijayan_2010_Foraging_ecology_of_the_globally_threatened_Nilgiri_Wood_Pigeon_in_the_Western_Ghats_India.pdf',
-    'bboc.v144i2.2024.a3.pdf': 'van_Grouw_et_al_2024_Why_Bolles_Laurel_Pigeon_Columba_bollii_is_not_named_Waglers_Laurel_Pigeon.pdf',
-    'madeira_tour_report_2021.pdf': 'Morris_2021_Madeira_Tour_Report.pdf',
-    'Journal of Avian Biology - 2021 - Marrero - Trophic strategies of two sympatric endemic pigeons in insular ecosystems a.pdf': 'Marrero_et_al_2021_Trophic_strategies_of_two_sympatric_endemic_pigeons_in_insular_ecosystems.pdf',
-    'Boc097-1986.pdf': 'van_Grouw_et_al_2024_Why_Bolles_Laurel_Pigeon_Columba_bollii_is_not_named_Waglers_Laurel_Pigeon_Columba_lamprauchen.pdf',
-    'BCI-2004-14-165.pdf': 'Marrero_et_al_2004_Diet_of_the_endemic_Madeira_Laurel_Pigeon_Columba_trocaz_in_agricultural_and_forest_areas_Implications_for_conservation.pdf',
-    'diet-of-the-endemic-madeira-laurel-pigeon-columba-trocaz-in-agricultural-and-forest-areas-implications-for-conservation.pdf': 'Marrero_et_al_2004_Diet_of_the_endemic_Madeira_Laurel_Pigeon_Columba_trocaz_in_agricultural_and_forest_areas_Implications_for_conservation.pdf',
-    '2453_columba_trocaz.pdf': 'BirdLife_International_2021_Columba_trocaz_Madeira_Laurel_pigeon_European_Red_List_of_Birds.pdf',
-    'population_trends_and_status_of_the_madeira_laurel_pigeon_columba_trocaz.pdf': 'Oliveira_et_al_1999_Population_trends_and_status_of_the_Madeira_Laurel_Pigeon_Columba_trocaz.pdf',
-    'Douradoetal_2013_JOrnithology.pdf': 'Dourado_et_al_2013_JOrnithology_Phylogenetic_origin_of_the_endemic_pigeons_from_Madeira_and_Azores_Islands.pdf',
+    'Rohiman_2019_J._Phys.__Conf._Ser._1204_012070.pdf': 'Rohiman_et_al_2019_J._Phys._Conf._Ser._Geochemical_Characteristics_of_Volcanic_Rocks_from_Mt_Masurai_Caldera_Indonesia.pdf',
+    'mineralization-study-of-volcanic-rocks-in-colo-volcano-tojo-12p5xwo6nl.pdf': 'Asrafil_et_al_2020_Jurnal_Geomine_Mineralization_Study_of_Volcanic_Rocks_in_Colo_Volcano_Indonesia.pdf',
+    'e3sconf_icosmed2023_01011.pdf': 'Permana_et_al_2023_E3S_Web_of_Conferences_Characteristics_of_Volcanic_Rock_In_The_Bualemo_Area_North_Gorontalo_Indonesia.pdf',
+    '978-3-642-74864-6_2.pdf': 'Fisher_et_al_1984_Pyroclastic_Rocks_Chapter_2_Volcanoes_Volcanic_Rocks_and_Magma_Chambers.pdf',
+    'ngm2016_article_Abstr_no_137revised.pdf': 'Foged_et_al_2016_Proceedings_17th_Nordic_Geotechnical_Meeting_Strength_and_deformation_properties_of_volcanic_rocks_in_Iceland.pdf',
+    '1-s2.0-S2949736125000065-main.pdf': 'Yang_et_al_2025_Volcanic_rocks_in_the_21st_century_Multifaceted_applications_for_sustainable_development.pdf',
+    'Navelot_JVGR_2018-CorrectionV4.pdf': 'Navelot_et_al_2018_Petrophysical_properties_of_volcanic_rocks_and_impacts_of_hydrothermal_alteration_in_the_Guadeloupe_Archipelago.pdf',
+    '2018-JVGR-complex conductivity volcanoes.pdf': 'Ghorbani_et_al_2018_Complex_conductivity_of_volcanic_rocks_and_the_geophysical_mapping_of_alteration_in_volcanoes.pdf',
+    'ca19527404c0dd71b7d37e10339b3ab09862.pdf': 'Shaaban_et_al_2020_Classification_of_Volcanic_Rocks_based_on_Rough_Set_Theory.pdf',
+    'geokniga-volcanic-textures-guide-interpretation-textures-volcanic-rocks.pdf': 'McPhie_et_al_1993_Volcanic_Textures_A_Guide_to_the_Interpretation_of_Textures_in_Volcanic_Rocks.pdf',
+    'Week10-ilesaintehelene.pdf': 'Nov_2018_EPSC_240_Classification_and_Texture_of_Volcanic_Rocks.pdf',
+    '289.pdf': 'Middlemost_1972_A_Simple_Chemical_Classification_of_Volcanic_Rocks.pdf',
+    'The_Life_of_Volcanic_Rocks_During_and_After_an_Eru.pdf': 'Brennan_et_al_2021_The_Life_of_Volcanic_Rocks_During_and_After_an_Eruption.pdf',
         
         # Default fallback
         'unknown': 'Unknown Document'
@@ -143,78 +142,89 @@ def summarize_fact_check(question, retrieved_docs, ai_answer, language="English"
 
 def optimize_search_query(question, retrieved_docs):
     """
-    基于用户问题和 RAG 检索内容优化搜索查询
+    Optimize search query based on user question and RAG retrieval for volcanic rock character
     
     Args:
-        question: 用户原始问题
-        retrieved_docs: RAG 检索到的文档
+        question: User's original question
+        retrieved_docs: RAG retrieved documents
     
     Returns:
-        str: 优化后的搜索查询
+        str: Optimized search query
     """
-    # 从 RAG 文档中提取关键概念
+    # Extract key concepts from RAG documents
     rag_keywords = set()
-    for doc in retrieved_docs[:2]:  # 只看前2个最相关的文档
+    for doc in retrieved_docs[:2]:  # Only look at top 2 most relevant documents
         content = doc.page_content.lower()
-        # 提取关键鸟类学/保护相关词汇
-        bio_keywords = ['trocaz pigeon', 'trocaz pigeon', 'madeira laurel pigeon', 'columba trocaz', 
-                        'pigeon', 'endemic', 'madeira', 'conservation', 'endangered', 'breeding', 
-                        'nesting', 'habitat', 'species', 'population', 'laurel forest',
-                        'bird', 'avian', 'macaronesia', 'azores', 'canary islands',
-                        'forest bird', 'laurel', 'feeding', 'migration', 'protected']
-        for keyword in bio_keywords:
+        # Extract key geology/volcanology related vocabulary
+        geo_keywords = ['volcanic rock', 'basalt', 'magma', 'lava', 'igneous', 
+                       'madeira', 'portugal', 'atlantic', 'geology', 'volcanology',
+                       'eruption', 'volcano', 'crust', 'mantle', 'mineral',
+                       'formation', 'geological', 'rock cycle', 'plate tectonics',
+                       'archipelago', 'macaronesia', 'azores', 'canary islands',
+                       'oceanic island', 'hotspot', 'seamount', 'pillow lava',
+                       'vesicular', 'porphyritic', 'crystallization', 'solidification',
+                       'quaternary', 'miocene', 'pliocene', 'cenozoic']
+        for keyword in geo_keywords:
             if keyword in content:
                 rag_keywords.add(keyword)
     
-    # 构建精准搜索查询
-    base_query = "Trocaz pigeon"
+    # Build precise search query
+    base_query = "Madeira volcanic rock geology"
     
-    # 添加相关上下文关键词
-    if 'conservation' in rag_keywords or 'endangered' in rag_keywords:
-        base_query += " conservation status IUCN"
-    elif 'breeding' in rag_keywords or 'nesting' in rag_keywords:
-        base_query += " breeding behavior nesting sites"
-    elif 'laurel forest' in rag_keywords or 'habitat' in rag_keywords:
-        base_query += " laurel forest habitat Madeira"
-    elif 'macaronesia' in rag_keywords or 'azores' in rag_keywords:
-        base_query += " Macaronesian islands distribution"
+    # Add relevant context keywords
+    if 'formation' in rag_keywords or 'geological' in rag_keywords:
+        base_query += " formation process age"
+    elif 'eruption' in rag_keywords or 'volcano' in rag_keywords:
+        base_query += " volcanic eruption history timeline"
+    elif 'basalt' in rag_keywords or 'lava' in rag_keywords:
+        base_query += " basalt composition mineralogy"
+    elif 'macaronesia' in rag_keywords or 'archipelago' in rag_keywords:
+        base_query += " Macaronesian islands geological origin"
+    elif 'madeira' in rag_keywords or 'portugal' in rag_keywords:
+        base_query += " Madeira island geology landscape"
     else:
-        base_query += " endemic bird species biology"
+        base_query += " volcanic rock characteristics properties"
     
-    # 添加英文关键词确保搜索质量
-    base_query += " Columba trocaz"
+    # Add English keywords to ensure search quality
+    base_query += " igneous rock geology scientific"
     
     return base_query
 
 def filter_search_results(results, question):
     """
-    智能过滤搜索结果，排除无关内容
+    Intelligently filter search results, excluding irrelevant content for volcanic geology
     
     Args:
-        results: 原始搜索结果列表
-        question: 用户问题
+        results: Raw search results list
+        question: User question
     
     Returns:
-        list: 过滤后的相关结果
+        list: Filtered relevant results
     """
     filtered = []
     
-    # 相关关键词（鸟类学/保护相关）
+    # Relevant keywords (geology/volcanology related)
     relevant_keywords = [
-        'trocaz pigeon', 'madeira laurel pigeon', 'columba trocaz', 'pigeon', 'bird', 
-        'endemic', 'madeira', 'conservation', 'endangered', 'breeding', 'habitat', 
-        'species', 'population', 'laurel forest', 'avian', 'macaronesia', 
-        'azores', 'canary islands', 'forest bird', 'laurel', 'feeding', 
-        'migration', 'protected', 'ornithology', 'wildlife', 'biodiversity',
-        'columbidae', 'island endemic', 'atlantic islands'
+        'volcanic rock', 'basalt', 'magma', 'lava', 'igneous', 'madeira', 
+        'portugal', 'geology', 'volcanology', 'eruption', 'volcano', 'crust', 
+        'mantle', 'mineral', 'formation', 'geological', 'rock cycle', 
+        'plate tectonics', 'archipelago', 'macaronesia', 'azores', 
+        'canary islands', 'oceanic island', 'hotspot', 'seamount', 
+        'pillow lava', 'vesicular', 'porphyritic', 'crystallization', 
+        'solidification', 'quaternary', 'miocene', 'pliocene', 'cenozoic',
+        'ignimbrite', 'tuff', 'pyroclastic', 'stratovolcano', 'shield volcano',
+        'fumarole', 'geothermal', 'petrology', 'lithology', 'bedrock',
+        'weathering', 'erosion', 'sedimentary', 'metamorphic'
     ]
     
-    # 无关关键词（技术/编程相关）
+    # Irrelevant keywords (other contexts)
     irrelevant_keywords = [
-        'framework', 'programming', 'code', 'software', 'api', 'rust',
-        '编程', '框架', '开发', '代码', 'github', 'npm', 'cargo',
-        'gaming', 'video game', 'game character', 'fictional',
-        'car', 'automotive', 'vehicle', 'transportation'
+        'music', 'band', 'song', 'album', 'rock music', 'concert',
+        'mining', 'quarry', 'construction', 'building material', 'gravel',
+        'video game', 'game character', 'fictional', 'fantasy',
+        'climbing', 'bouldering', 'rock climbing', 'sports',
+        'gemstone', 'jewelry', 'precious stone', 'decoration',
+        'programming', 'software', 'code', 'framework', 'development'
     ]
     
     for result in results:
@@ -222,20 +232,20 @@ def filter_search_results(results, question):
         body = result.get('body', '').lower()
         combined = title + ' ' + body
         
-        # 检查是否包含无关关键词
+        # Check for irrelevant keywords
         has_irrelevant = any(keyword in combined for keyword in irrelevant_keywords)
         if has_irrelevant:
-            print(f"[Fact-Check] 过滤无关结果: {result.get('title', 'Unknown')[:50]}...")
+            print(f"[Fact-Check] Filtered irrelevant result: {result.get('title', 'Unknown')[:50]}...")
             continue
         
-        # 检查是否包含相关关键词
+        # Check for relevant keywords
         has_relevant = any(keyword in combined for keyword in relevant_keywords)
         if has_relevant:
             filtered.append(result)
         else:
-            # 额外检查：如果标题明确包含关键物种名称，也保留
+            # Additional check: if title contains key geological terms, keep it
             title_lower = title.lower()
-            if any(name in title_lower for name in ['trocaz pigeon', 'madeira laurel pigeon', 'columba trocaz']):
+            if any(term in title_lower for term in ['madeira geology', 'volcanic rock', 'basalt formation', 'magma', 'igneous rock']):
                 filtered.append(result)
     
     return filtered

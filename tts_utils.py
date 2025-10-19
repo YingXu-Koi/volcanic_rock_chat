@@ -8,14 +8,14 @@ import base64
 import uuid
 
 
-def speak_with_qwen(text, voice="Cherry", model="qwen3-tts-flash"):
+def speak_with_qwen(text, voice="Marcus", model="qwen3-tts-flash"):
     """
     使用 Qwen TTS - 按照官方注释的正确接口
     官方注释：dashscope.audio.qwen_tts.SpeechSynthesizer.call(...)
     
     Args:
         text: 要转换的文本
-        voice: 音色（Cherry 或 Ethan）
+        voice: 音色（Marcus 或 Ethan）
         model: TTS 模型（默认 qwen3-tts-flash）
     
     Returns:
@@ -93,13 +93,13 @@ def speak_with_qwen(text, voice="Cherry", model="qwen3-tts-flash"):
         return False, f"Qwen TTS failed: {str(e)}"
 
 
-def speak(text, voice="Cherry", timeout=10):
+def speak(text, voice="Marcus", timeout=10):
     """
     Qwen TTS 语音合成函数
     
     Args:
         text: 要转换的文本
-        voice: 音色（Cherry 或 Ethan）
+        voice: 音色（Marcus 或 Ethan）
         timeout: 超时时间（秒）
     
     Returns:
