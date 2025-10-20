@@ -1001,7 +1001,7 @@ def main():
         print(f"User input: {user_input}")
         
         # Chat Section
-        chatSection = st.container(height=520, key="chat_section", border=False)
+        chatSection = st.container(key="chat_section", border=False)
         with chatSection:
             if "chat_history" not in st.session_state:
                 st.session_state.chat_history = []
