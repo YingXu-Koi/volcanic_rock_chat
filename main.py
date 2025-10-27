@@ -1222,11 +1222,18 @@ def main():
             # Get the most recent sticker (last in the list)
             most_recent = st.session_state.awarded_stickers[-1]
 
+            current_caption = most_recent["caption"]
+            for q, reward in sticker_rewards.items():
+                if reward["image"] == most_recent["image"]:
+                    if isinstance(reward["caption"], dict) and st.session_state.language in reward["caption"]:
+                        current_caption = reward["caption"][st.session_state.language]
+                    break
+
             st.markdown(
                 f"""
                 <div class="sticker-reward">
                     <img src="data:image/png;base64,{base64.b64encode(open(most_recent["image"], "rb").read()).decode()}">
-                    <div class="sticker-caption">{most_recent["caption"]}</div>
+                    <div class="sticker-caption">{current_caption}</div>
                 </div>
                 """,
                 unsafe_allow_html=True
